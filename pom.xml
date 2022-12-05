@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.devtask</groupId>
 	<artifactId>member-integrator</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<name>member-integrator</name>
 	<description>This application has been created as part of Trio´s technical evaluation</description>
 	<properties>
