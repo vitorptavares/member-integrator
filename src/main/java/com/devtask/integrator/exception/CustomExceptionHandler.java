@@ -1,10 +1,11 @@
 package com.devtask.integrator.exception;
 
-import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.reactive.function.client.WebClientResponseException;
+
+import javax.servlet.http.HttpServletRequest;
 
 @ControllerAdvice
 public class CustomExceptionHandler {

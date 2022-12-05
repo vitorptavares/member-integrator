@@ -60,7 +60,7 @@ class ContactServiceImplTest {
     }
 
     @Test
-    void synchronize() {
+    void test_synchronize() {
 
         //given
         ContactDto contact1 = ContactDto.builder().firstName("Jhon").lastName("Doe").email("jhondoe@gmail.com").build();
@@ -71,7 +71,7 @@ class ContactServiceImplTest {
         newMembersDto.setNewMembers(members);
         Mono<ContactDto[]> contactMono =  Mono.just(contacts);
         Mono<NewMembersDto> newMemberMono = Mono.just(newMembersDto);
-        ContactSync expectedContactSync = ContactSync.builder().contactList(Arrays.stream(contacts).toList()).syncedContacts(2).build();
+        ContactSync expectedContactSync = ContactSync.builder().contactList(Arrays.stream(contacts).collect(Collectors.toList())).syncedContacts(2).build();
         //when
         when(contactClient.getAllContacts()).thenReturn(contactMono);
         when(mailChimpClient.saveAllContacts(any(MembersDto.class))).thenReturn(newMemberMono);
